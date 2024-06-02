@@ -1,0 +1,75 @@
+.mainScreen{
+  margin-top: 100px;
+  width:100vw;
+  display:flex;
+  justify-content: center;
+}
+
+.container{
+position: relative;
+display: flex;
+justify-content: center;
+align-items: center;
+width: 700px;
+height: 400px;
+}
+
+
+.current-image{
+  border-radius: 0.5 rem;
+  box-shadow: 0px 0px 7px rgb(190, 190, 190);
+  width: 100%;
+}
+
+
+.arrow{
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  color: aliceblue;
+  filter: drop-shadow(0px 0px 5px #555);
+}
+
+.arrow-left{
+  left: 1rem;
+}
+
+.arrow-right{
+  right: 1rem;
+}
+.circle-indicators{
+  display: flex;
+  position: absolute;
+  bottom: 1rem;
+}
+
+.current-indicator{
+  background-color: white;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  margin:  0 0.2rem;
+  cursor: pointer;
+}
+
+.current-indicator:hover{
+  transform: scale(1.1);
+}
+
+.arrow:hover{
+  transform: scale(1.1);
+}
+
+
+
+
+.hide-img{
+  display: none;
+}
+
+
+.hide-ind{
+  background-color: gray;
+}

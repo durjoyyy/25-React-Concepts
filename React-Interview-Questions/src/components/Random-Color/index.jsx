@@ -4,11 +4,11 @@ import React, { useEffect, useState } from "react";
 //RGB
 
 const RandomColor = () => {
-  const [typeOfColor, setTypeOfColor] = useState('hex');
+  const [typeOfColor, setTypeOfColor] = useState("hex");
   const [color, setColor] = useState("#000000");
 
   function randomColorUtility(len) {
-    return Math.floor(Math.random()*len);
+    return Math.floor(Math.random() * len);
   }
 
   function handleCreateHex() {
@@ -23,26 +23,32 @@ const RandomColor = () => {
   }
 
   function handleCreateRGB() {
-    const r=randomColorUtility(256);
-    const g=randomColorUtility(256);
-    const b=randomColorUtility(256);
+    const r = randomColorUtility(256);
+    const g = randomColorUtility(256);
+    const b = randomColorUtility(256);
 
-    setColor(`rgb(${r},${g},${b})`)
+    setColor(`rgb(${r},${g},${b})`);
   }
 
-  useEffect(()=>{
-    if(typeOfColor=='rgb') handleCreateRGB;
+  useEffect(() => {
+    if (typeOfColor == "rgb") handleCreateRGB;
     else handleCreateHex;
-  },[typeOfColor])
+  }, [typeOfColor]);
 
   return (
     <div
       style={{
         width: "100vw",
         height: "100vh",
+        justifyContent: "center",
         backgroundColor: color,
       }}
     >
+      <div style={{
+        display:"flex",
+        justifyContent: "center",
+        backgroundColor: color,
+      }}>
       <button onClick={() => setTypeOfColor("hex")}>Create Hex Color</button>
       <button onClick={() => setTypeOfColor("rgb")}>Create RGB Color</button>
       <button
@@ -50,17 +56,21 @@ const RandomColor = () => {
       >
         Generate Random Color
       </button>
-      <div style={{
-        display:'flex',
-        justifyContent:'center',
-        alignItems:'center',
-        color:'white',
-        fontSize:'60px',
-        marginTop:'50px',
-        flexDirection:'column',
-        gap:'20px'
-      }}>
-        <h2>{typeOfColor==='rgb'?'RGB Color ':'HEX Color ' }</h2>
+      </div>
+
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          color: "white",
+          fontSize: "60px",
+          marginTop: "50px",
+          flexDirection: "column",
+          gap: "20px",
+        }}
+      >
+        <h2>{typeOfColor === "rgb" ? "RGB Color " : "HEX Color "}</h2>
         <h1>{color}</h1>
       </div>
     </div>
@@ -68,6 +78,5 @@ const RandomColor = () => {
 };
 
 export default RandomColor;
-
 
 //45 25
